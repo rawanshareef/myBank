@@ -1,0 +1,34 @@
+CC=gcc
+
+OBJECTS_MAIN=myBank.o main.o
+
+FLAGS= -Wall 
+
+all: main	
+
+main: $(OBJECTS_MAIN)
+	$(CC) $(FLAGS) -o main $(OBJECTS_MAIN) -lm
+
+main.o: main.c myBank.h
+	$(CC) $(FLAGS) -c main.c
+
+myBank.o: myBank.c myBank.h 
+	$(CC) $(FLAGS) -c myBank.c
+
+.PHONY: clean all
+
+clean:
+
+	rm -f *.o main
+
+
+
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+
+
+
+
